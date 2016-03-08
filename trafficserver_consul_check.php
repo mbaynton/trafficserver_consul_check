@@ -29,7 +29,9 @@ try {
 }
 
 try {
-  $res->json();
+  if(NULL === json_decode($res->getBody())) {
+    report (2, "Did not receive expected JSON from Trafficserver.");
+  }
 } catch (\Exception $e) {
   report (2, "Did not receive expected JSON from Trafficserver.");
 }
