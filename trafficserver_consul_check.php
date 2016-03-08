@@ -33,3 +33,5 @@ try {
 } catch (\Exception $e) {
   report (2, "Did not receive expected JSON from Trafficserver.");
 }
+
+report (0, 'Stats over HTTP response OK');
